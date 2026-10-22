@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #ffffff;
+  --color-ink: #17345f;
+  --color-muted: #647b9e;
+  --color-line: #d7e4f5;
+  --color-accent: #3478d4;
+  --color-accent-dark: #245ba8;
+  --color-highlight: #9bc5ff;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply m-0 min-h-screen bg-paper font-sans text-ink;
+    background-image:
+      radial-gradient(circle at 8% 15%, rgba(74, 139, 224, .1), transparent 28rem),
+      linear-gradient(145deg, #ffffff 25%, #f1f6fd 100%);
+  }
+
+  button, input, textarea, select { @apply font-sans; }
+  button { @apply cursor-pointer; }
+  a { @apply text-inherit no-underline; }
+  h1, h2, h3 { @apply font-display; }
+}

@@ -19,6 +19,8 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from .views import frontend
+
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -26,6 +28,13 @@ from rest_framework_simplejwt.views import (
 )
 
 urlpatterns = [
+    path('', frontend, name='frontend-home'),
+    path('login/', frontend, name='frontend-login'),
+    path('register/', frontend, name='frontend-register'),
+    path('pokedex/', frontend, name='frontend-pokedex'),
+    path('pokedex/new/', frontend, name='frontend-pokemon-create'),
+    path('pokedex/<int:pk>/edit/', frontend, name='frontend-pokemon-edit'),
+    path('pokedex/<int:pk>/', frontend, name='frontend-pokemon-detail'),
     path('admin/', admin.site.urls),
     path('api/', include('apps.users.urls')),
     path('api/', include('apps.pokemons.urls')),
