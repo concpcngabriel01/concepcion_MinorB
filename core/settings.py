@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jfnzj958^ci-*7pg4@0f#dns=a#0ghvp0!=8(71wwv@^g76kcp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
-    'app.users.apps.UsersConfig',
-    'app.pokemons.apps.PokemonsConfig',
+    'apps.users.apps.UsersConfig',
+    'apps.pokemons.apps.PokemonsConfig',
 ]
 
 MIDDLEWARE = [
@@ -128,7 +128,9 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / 'media/'
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Email

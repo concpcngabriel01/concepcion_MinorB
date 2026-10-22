@@ -4,8 +4,6 @@ from .models import Pokemon
 
 
 class PokemonSerializer(serializers.ModelSerializer):
-    
-
     id = serializers.IntegerField(read_only=True)
     level = serializers.IntegerField(min_value=1)
     type = serializers.ChoiceField(choices=Pokemon.PokemonType.choices)
